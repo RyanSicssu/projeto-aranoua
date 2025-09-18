@@ -1,0 +1,43 @@
+root {
+  --color-azul-perolado: #4a90e2;
+  --color-verde-claro: #6dd5c3;
+  --color-branco: #ffffff;
+  --color-texto: #0d1b2a;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--color-branco);
+  color: var(--color-texto);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 16px;
+}
+
+.card {
+  background-color: var(--color-branco);
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+button.primary {
+  background-color: var(--color-azul-perolado);
+  color: var(--color-branco);
+}
+
+button.secondary {
+  background-color: var(--color-verde-claro);
+  color: var(--color-texto);
+}
