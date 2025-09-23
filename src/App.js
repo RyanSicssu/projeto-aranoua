@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Consulta from "./pages/Consulta";
 import Relatorio from "./pages/Relatorio";
+import "./pages/Pages.css";
 
 function App() {
   return (
@@ -16,3 +17,4 @@ function App() {
 }
 
 export default App;
+

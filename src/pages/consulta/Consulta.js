@@ -6,21 +6,27 @@ function Consulta() {
 
   return (
     <>
-      <header>Telemedicina IFAM</header>
+      <header className="navbar">
+        Telemedicina IFAM
+      </header>
+
       <div className="container">
-        <h1>Consulta Online</h1>
-        <textarea
-          placeholder="Descreva seus sintomas..."
-          className="input"
-          rows="5"
-        ></textarea>
-        <button onClick={() => navigate("/relatorio")} className="btn">
-          Encaminhar para Médico
-        </button>
+        <div className="card">
+          <h1>Consulta Online</h1>
+          <textarea
+            placeholder="Descreva seus sintomas..."
+            className="input"
+            rows="5"
+          ></textarea>
+          <button onClick={() => navigate("/relatorio")} className="btn">
+            Encaminhar para Médico
+          </button>
+        </div>
       </div>
     </>
   );
 }
 
 export default Consulta;
+
 
