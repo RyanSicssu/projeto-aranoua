@@ -7,7 +7,7 @@ function Consulta() {
   return (
     <>
       <header className="navbar">
-        Telemedicina IFAM
+        E-Saúde IFAM
       </header>
 
       <div className="container">
