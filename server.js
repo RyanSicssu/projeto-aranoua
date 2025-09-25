@@ -1,5 +1,6 @@
-const express = require('express');
-const cors = require('cors');
+const express = require("express");
+const cors = require("cors");
+const path = require("path");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -8,23 +9,34 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// Rota de teste
-app.get('/', (req, res) => {
-  res.send('API do Projeto Aranoua funcionando 🚀');
+// Rotas de teste
+app.get("/api", (req, res) => {
+  res.json({ message: "Servidor rodando 🚀" });
 });
 
-// Exemplo de rota para usuários
-app.get('/usuarios', (req, res) => {
+// Rota de usuários
+app.get("/usuarios", (req, res) => {
   res.json([
     { id: 1, nome: "Maria", email: "maria@email.com" },
     { id: 2, nome: "João", email: "joao@email.com" }
   ]);
 });
 
-// Exemplo de rota para consultas
-app.post('/consultas', (req, res) => {
+// Rota de consultas
+app.post("/consultas", (req, res) => {
   const { paciente, medico, data } = req.body;
-  res.json({ mensagem: "Consulta agendada com sucesso!", dados: { paciente, medico, data } });
+  res.json({
+    mensagem: "Consulta agendada com sucesso!",
+    dados: { paciente, medico, data }
+  });
+});
+
+// Servir arquivos estáticos (frontend em /public)
+app.use(express.static(path.join(__dirname, "public")));
+
+// Rota coringa para SPA (React, Angular, etc.)
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 // Iniciar servidor
